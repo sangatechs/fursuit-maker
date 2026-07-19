@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title>Understanding Fursuit Sizing: Finding the Best Fit for Comfort in New York</title>
+    <meta name="description" content="A trustworthy fursuit maker guides sizing with clear measurement guides and fit checkpoints. Accurate sizing ensures comfort during New York events with better movement.">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800;900&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --blue: #1d4ed8;
+            --blue-light: #60a5fa;
+            --blue-pale: #eff6ff;
+            --sky: #0ea5e9;
+            --bg: #f0f8ff;
+            --white: #ffffff;
+            --dark: #0c1a3a;
+            --surface: #ffffff;
+            --border: #bfdbfe;
+            --text: #0c1a3a;
+            --text-light: #3b5bab;
+            --green: #15803d;
+            --red: #dc2626;
+        }
+        body { font-family: 'Lexend', sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; }
+
+        /* HEADER */
+        .header { background: var(--dark); padding: 16px 40px; display: flex; align-items: center; justify-content: space-between; }
+        .logo { font-size: 1.1em; font-weight: 900; color: var(--blue-light); }
+        .hdr-right { display: flex; gap: 10px; }
+        .hdr-pill { background: rgba(96,165,250,0.1); border: 1px solid rgba(96,165,250,0.25); color: var(--blue-light); font-size: 0.72em; font-weight: 700; padding: 4px 12px; border-radius: 50px; }
+
+        /* HERO */
+        .hero { background: linear-gradient(135deg, var(--dark) 0%, #0c2a6e 50%, var(--blue) 100%); padding: 90px 40px; position: relative; overflow: hidden; }
+        .hero::before { content: '📏'; position: absolute; right: 3%; bottom: 0; font-size: 16em; opacity: 0.05; }
+        .hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 50%, rgba(96,165,250,0.12), transparent 55%); }
+        .hero-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 280px; gap: 50px; align-items: center; position: relative; z-index: 2; }
+        @media (max-width: 860px) { .hero-inner { grid-template-columns: 1fr; } .hero-measure-card { display: none; } .hero { padding: 60px 20px; } }
+        .hero-eyebrow { font-size: 0.72em; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 14px; }
+        .hero h1 { font-size: 2.5em; font-weight: 900; color: #fff; line-height: 1.15; margin-bottom: 16px; }
+        .hero h1 em { color: #93c5fd; font-style: normal; }
+        .hero-sub { color: rgba(255,255,255,0.5); font-size: 1.05em; max-width: 440px; }
+        .hero-measure-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 24px; }
+        .hmc-title { font-size: 0.7em; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 14px; }
+        .hmc-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 0.86em; }
+        .hmc-item:last-child { border-bottom: none; }
+        .hmc-label { color: rgba(255,255,255,0.5); }
+        .hmc-point { font-weight: 700; color: #93c5fd; }
+
+        /* MAIN */
+        .main { max-width: 1060px; margin: 0 auto; padding: 60px 24px 80px; }
+
+        /* ANCHOR CARD */
+        .anchor-card { background: var(--blue-pale); border: 1px solid var(--border); border-left: 5px solid var(--blue); border-radius: 0 14px 14px 0; padding: 30px 34px; margin-bottom: 52px; box-shadow: 0 4px 16px rgba(29,78,216,0.08); }
+        .ac-label { font-size: 0.7em; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; }
+        .anchor-card p { font-size: 1.1em; color: var(--text); line-height: 1.85; }
+
+        /* MEASUREMENT GUIDE */
+        .measure-title { font-size: 1.7em; font-weight: 900; color: var(--dark); margin-bottom: 6px; }
+        .measure-sub { color: var(--text-light); margin-bottom: 32px; }
+        .measure-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-bottom: 40px; }
+        .mg-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 24px 18px; box-shadow: 0 2px 8px rgba(29,78,216,0.05); }
+        .mg-card:nth-child(1) { border-top: 3px solid var(--blue); }
+        .mg-card:nth-child(2) { border-top: 3px solid var(--sky); }
+        .mg-card:nth-child(3) { border-top: 3px solid #7c3aed; }
+        .mg-card:nth-child(4) { border-top: 3px solid var(--green); }
+        .mg-card:nth-child(5) { border-top: 3px solid #d97706; }
+        .mg-card:nth-child(6) { border-top: 3px solid #db2777; }
+        .mgc-icon { font-size: 1.8em; margin-bottom: 10px; }
+        .mgc-point { font-size: 0.7em; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-bottom: 6px; }
+        .mgc-name { font-weight: 800; color: var(--dark); font-size: 0.95em; margin-bottom: 4px; }
+        .mgc-how { font-size: 0.84em; color: var(--text-light); line-height: 1.55; }
+
+        /* CONTENT BLOCK */
+        .content-block { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 42px; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(29,78,216,0.04); }
+        .content-block h2 { font-size: 1.5em; font-weight: 900; color: var(--dark); margin-bottom: 14px; }
+        .content-block h3 { font-size: 1.05em; font-weight: 700; color: var(--blue); margin: 20px 0 8px; }
+        .content-block p { font-size: 1.02em; color: var(--text-light); margin-bottom: 14px; text-align: justify; line-height: 1.75; }
+        @media (max-width: 768px) { .content-block { padding: 24px; } }
+
+        /* FIT COMPARISON */
+        .fit-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 22px 0; }
+        @media (max-width: 640px) { .fit-compare { grid-template-columns: 1fr; } }
+        .fc-good { background: #f0fdf4; border: 1px solid #bbf7d0; border-left: 4px solid var(--green); border-radius: 0 10px 10px 0; padding: 20px; }
+        .fc-bad { background: #fef2f2; border: 1px solid #fecaca; border-left: 4px solid var(--red); border-radius: 0 10px 10px 0; padding: 20px; }
+        .fc-title { font-weight: 800; font-size: 0.95em; margin-bottom: 10px; }
+        .fc-good-title { color: var(--green); }
+        .fc-bad-title { color: var(--red); }
+        .fc-list { list-style: none; }
+        .fc-list li { font-size: 0.9em; padding: 5px 0; color: var(--text); border-bottom: 1px solid rgba(0,0,0,0.06); display: flex; align-items: center; gap: 8px; }
+        .fc-list li:last-child { border-bottom: none; }
+        .good-dot { color: var(--green); font-weight: 800; }
+        .bad-dot { color: var(--red); font-weight: 800; }
+
+        /* HOTSPOT GRID */
+        .hotspot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 20px 0; }
+        .hg-card { background: var(--blue-pale); border: 1px solid var(--border); border-radius: 10px; padding: 18px 14px; }
+        .hg-area { font-weight: 800; color: var(--dark); font-size: 0.92em; margin-bottom: 4px; }
+        .hg-issue { font-size: 0.8em; color: var(--red); font-weight: 600; margin-bottom: 6px; }
+        .hg-fix { font-size: 0.8em; color: var(--green); line-height: 1.5; }
+
+        /* FOOTER */
+        footer { background: var(--dark); border-top: 3px solid var(--blue-light); padding: 32px 24px; text-align: center; }
+        footer p { color: #1e3a8a; font-size: 0.9em; }
+
+        a { color: var(--blue); text-decoration: none; font-weight: 700; border-bottom: 2px solid rgba(29,78,216,0.25); }
+        a:hover { border-color: var(--blue); }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">FursuitMania.com</div>
+        <div class="hdr-right">
+            <span class="hdr-pill">📏 Sizing Guide</span>
+            <span class="hdr-pill">🗽 New York</span>
+        </div>
+    </div>
+
+    <div class="hero">
+        <div class="hero-inner">
+            <div>
+                <div class="hero-eyebrow">Sizing Guide — New York</div>
+                <h1>Understanding Fursuit Sizing: <em>Best Fit</em> for Comfort in New York</h1>
+                <p class="hero-sub">Accurate measurements, fit checkpoints, and maker guidance ensure all-day comfort at New York events without hotspots or chafing.</p>
+            </div>
+            <div class="hero-measure-card">
+                <div class="hmc-title">Key Measurements</div>
+                <div class="hmc-item"><span class="hmc-label">Head circumference</span><span class="hmc-point">Foam base</span></div>
+                <div class="hmc-item"><span class="hmc-label">Chest measurement</span><span class="hmc-point">Bodysuit fit</span></div>
+                <div class="hmc-item"><span class="hmc-label">Inseam length</span><span class="hmc-point">Leg panels</span></div>
+                <div class="hmc-item"><span class="hmc-label">Foot length</span><span class="hmc-point">Paw sizing</span></div>
+                <div class="hmc-item"><span class="hmc-label">Hand span</span><span class="hmc-point">Mitten fit</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+
+        <div class="anchor-card">
+            <div class="ac-label">Sizing Guide — New York Events</div>
+            <p>A trustworthy <a href="https://fursuitmania.com">fursuit maker</a> will guide sizing with clear measurement guides and fit checkpoints; accurate sizing ensures comfort during New York events, better movement, and longer wear without hotspots or chafing.</p>
+        </div>
+
+        <div class="measure-title">The Key Measurements Every Maker Needs</div>
+        <div class="measure-sub">What you measure and why it matters for your New York con fit</div>
+
+        <div class="measure-grid">
+            <div class="mg-card">
+                <div class="mgc-icon">📏</div>
+                <div class="mgc-point">Measurement 01</div>
+                <div class="mgc-name">Head Circumference</div>
+                <div class="mgc-how">Measured at the widest point around the head. This determines the foam base size and is the most critical measurement for head comfort during long New York con days.</div>
+            </div>
+            <div class="mg-card">
+                <div class="mgc-icon">👕</div>
+                <div class="mgc-point">Measurement 02</div>
+                <div class="mgc-name">Chest and Waist</div>
+                <div class="mgc-how">Measured at the fullest point while breathing normally. The bodysuit needs enough room for ventilation without being so loose that fabric bunches and causes chafing during prolonged movement.</div>
+            </div>
+            <div class="mg-card">
+                <div class="mgc-icon">📐</div>
+                <div class="mgc-point">Measurement 03</div>
+                <div class="mgc-name">Torso Length</div>
+                <div class="mgc-how">From shoulder to hip at front and back. Ensures the bodysuit sits correctly without riding up during walking, bending, or posing — critical for New York cons where you are active for hours.</div>
+            </div>
+            <div class="mg-card">
+                <div class="mgc-icon">🦵</div>
+                <div class="mgc-point">Measurement 04</div>
+                <div class="mgc-name">Inseam and Hip</div>
+                <div class="mgc-how">Hip circumference and inseam determine leg panel sizing. Wrong inseam creates a pulling sensation across the hips during walking that becomes intensely uncomfortable across a full convention day.</div>
+            </div>
+            <div class="mg-card">
+                <div class="mgc-icon">🦶</div>
+                <div class="mgc-point">Measurement 05</div>
+                <div class="mgc-name">Foot Length and Width</div>
+                <div class="mgc-how">Paw pads built to the wrong foot size create the most immediate comfort problem — you feel it with every step across a New York convention floor. Measure both feet as they often differ slightly.</div>
+            </div>
+            <div class="mg-card">
+                <div class="mgc-icon">✋</div>
+                <div class="mgc-point">Measurement 06</div>
+                <div class="mgc-name">Hand and Wrist</div>
+                <div class="mgc-how">Mitten width at knuckles and wrist circumference ensure hand paws fit securely without sliding and can be removed quickly when you need to manage personal items or take a heat break.</div>
+            </div>
+        </div>
+
+        <div class="content-block">
+            <h2>What Good vs Poor Fit Feels Like at a New York Con</h2>
+            <p>The difference between a well-fitted fursuit and one that is even slightly off becomes dramatically apparent over a full convention day. New York cons involve walking miles of convention floor, posing for dozens of photos, navigating crowds, and maintaining your character for hours. A suit that fits correctly becomes part of you during all of this; a suit with fit problems becomes the thing you are fighting against constantly instead of inhabiting comfortably.</p>
+            <div class="fit-compare">
+                <div class="fc-good">
+                    <div class="fc-title fc-good-title">✓ Well-Fitted Suit</div>
+                    <ul class="fc-list">
+                        <li><span class="good-dot">✓</span> Head sits level without tipping</li>
+                        <li><span class="good-dot">✓</span> Arms move fully without pulling</li>
+                        <li><span class="good-dot">✓</span> No fabric bunching at joints</li>
+                        <li><span class="good-dot">✓</span> Paws stay in place during wear</li>
+                        <li><span class="good-dot">✓</span> Comfortable for 2+ hours continuously</li>
+                        <li><span class="good-dot">✓</span> No persistent pressure points</li>
+                    </ul>
+                </div>
+                <div class="fc-bad">
+                    <div class="fc-title fc-bad-title">✗ Poorly-Fitted Suit</div>
+                    <ul class="fc-list">
+                        <li><span class="bad-dot">✗</span> Head rocks or sits low</li>
+                        <li><span class="bad-dot">✗</span> Arm raise pulls torso up</li>
+                        <li><span class="bad-dot">✗</span> Fabric folds dig into skin</li>
+                        <li><span class="bad-dot">✗</span> Paws rotate or slide during wear</li>
+                        <li><span class="bad-dot">✗</span> Discomfort builds quickly</li>
+                        <li><span class="bad-dot">✗</span> Red marks or chafing on skin</li>
+                    </ul>
+                </div>
+            </div>
+            <h3>Common Hotspot Locations and How Makers Address Them</h3>
+            <div class="hotspot-grid">
+                <div class="hg-card"><div class="hg-area">Top of the head</div><div class="hg-issue">Foam too tight causes headaches within 30 minutes</div><div class="hg-fix">✓ Maker adds foam padding or widens the base to distribute pressure</div></div>
+                <div class="hg-card"><div class="hg-area">Inner arms</div><div class="hg-issue">Armhole too tight restricts movement and chafes</div><div class="hg-fix">✓ Maker increases armhole circumference with gusset additions</div></div>
+                <div class="hg-card"><div class="hg-area">Hip flexors</div><div class="hg-issue">Inseam too short creates constant pulling when walking</div><div class="hg-fix">✓ Maker lengthens the crotch gusset to allow full stride</div></div>
+                <div class="hg-card"><div class="hg-area">Ball of the foot</div><div class="hg-issue">Paw pad too narrow creates pressure across a full con day</div><div class="hg-fix">✓ Maker uses actual foot width measurement rather than shoe size</div></div>
+            </div>
+        </div>
+
+        <div class="content-block">
+            <h2>Fit Checkpoints During Your Commission</h2>
+            <p>A trustworthy New York fursuit maker does not simply take your measurements once and build to those numbers without further verification. Good makers build fit checkpoints into the commission process — moments where you review elements of the suit before they are fully finished and have a chance to flag fit issues while corrections are still relatively simple to make.</p>
+            <h3>The Head Sizing Check</h3>
+            <p>Before the foam base is covered in fur, a responsible maker sends a photo of the bare foam head alongside clear measurements and often a wearability note — does the head clear your chin and sit comfortably at the back, or does the foam need to be widened? If you are local to a New York area maker, an in-person fitting at this stage is the gold standard for head sizing accuracy. For remote commissions, detailed photos from multiple angles with measurement confirmations allow you to identify any obvious sizing concerns before the much more expensive furring process begins.</p>
+            <h3>The Bodysuit Mockup Stage</h3>
+            <p>Many professional makers create a basic fabric mockup of the bodysuit using inexpensive material before cutting into the final fur. This mockup is sent to you — or worn during an in-person fitting — to verify that the pattern creates the correct fit at all key points. A mockup that binds at the shoulders or pulls across the back when you raise your arms indicates a pattern adjustment is needed before final construction. This stage catches the majority of fit problems before they are built into a finished and irreversible suit.</p>
+            <h3>Building in Wear Ease for New York Events</h3>
+            <p>Accurate measurements are the foundation of good sizing, but experienced makers also build in wear ease — small amounts of additional space at key points that accommodate movement, ventilation, and the thickness of any undersuit layer worn beneath the fursuit. For New York summer events particularly, a maker who understands wear ease builds suits that remain comfortable as body temperature rises and minor swelling of extremities occurs over a long day of wearing. This consideration separates makers experienced with con environments from those who build primarily for static display or short photoshoots.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 FursuitMania.com — Fursuit Maker New York — Sizing and Comfort Guide</p>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Understanding Fursuit Sizing: Finding the Best Fit for Comfort in New York",
+        "description": "A trustworthy fursuit maker guides sizing with clear measurement guides and fit checkpoints. Accurate sizing ensures comfort during New York events with better movement.",
+        "author": { "@type": "Organization", "@name": "FursuitMania.com" },
+        "publisher": { "@type": "Organization", "@name": "FursuitMania.com" },
+        "datePublished": "2026-01-01",
+        "dateModified": "2026-07-16"
+    }
+    </script>
+    <script>
+        const c = document.createElement('link'); c.rel = 'canonical'; c.href = window.location.href; document.head.appendChild(c);
+    </script>
+</body>
+</html>
